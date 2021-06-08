@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-    before_action :user_find, only: [:show, :edit, :update]
+    before_action :post_find, only: [:show, :edit, :update]
 
     def index
         @posts = Post.all
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
         params.require(:post).permit(:title, :body, post_images_images: [])
     end
 
-    def user_find
+    def post_find
         @post = Post.find(params[:id])
     end
 end
