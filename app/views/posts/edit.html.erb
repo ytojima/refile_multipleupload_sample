@@ -1,0 +1,9 @@
+<h1>Posts#edit</h1>
+<%= form_with model: @post do |f| %>
+    <%= f.label :title, 'title' %>
+    <%= f.text_field :title %><br/>
+    <%= f.label :body, 'body' %>
+    <%= f.text_area :body %><br/>
+    <%= f.attachment_field :post_images_images, multiple: true %>
+    <%= f.submit "記事を作成する" %>
+<% end %>

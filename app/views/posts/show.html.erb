@@ -1,0 +1,18 @@
+<h1>Posts#show</h1>
+<h3><%= link_to 'Update', edit_post_path(@post) %></h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <td><%= @post.title %></td>
+    </tr>
+    <tr>
+        <th>Body</th>
+        <td><%= @post.body %></td>
+    </tr>
+</table>
+<div>
+    <% @post.post_images.each do |image| %>
+        <%= attachment_image_tag image, :image, width: "300" %>
+        <%= link_to 'Destroy', image_path(image), method: :delete %>
+    <% end %>
+</div>
