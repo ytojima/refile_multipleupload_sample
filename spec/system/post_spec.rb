@@ -17,7 +17,7 @@ describe '表示のテスト' do
       it 'ファイルがアップロードできる' do
         find_by_id('post_title').set("title")
         find_by_id('post_body').set("created")
-        attach_file("post[post_images_images][]", Rails.root.join('spec', 'fixtures', '142_refileDownloadImage.png'))
+        attach_file('post[post_images_images][]', Rails.root.join('spec', 'fixtures', '142_refileDownloadImage.png'))
         click_on "記事を作成する"
       end
     end
